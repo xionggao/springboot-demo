@@ -98,7 +98,7 @@ public interface ICommonService<T> {
 	/**
 	 * 逻辑删除实体(批量)
 	 * 
-	 * @param t
+	 * @param ts
 	 * @throws BusinessException
 	 */
 	@Transactional(rollbackFor = Exception.class)
