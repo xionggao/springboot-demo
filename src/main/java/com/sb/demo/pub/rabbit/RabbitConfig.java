@@ -24,7 +24,7 @@ import org.springframework.context.annotation.Configuration;
  * <ul>
  * <li>1.配置RabbitAdmin和RabbitTemplate</li>
  * <li>2.配置死信交换机和延迟队列,消息消费异常时请调用
- * {@link com.rabbitmq.client.Channel类中的basicReject方法}将消息路由到死信队列中排队</li>
+ * {@link com.rabbitmq.client.Channel#basicReject}将消息路由到死信队列中排队</li>
  * </ul>
  * 
  * @author xg
@@ -97,8 +97,7 @@ public class RabbitConfig {
 
 	@Bean
 	public RabbitAdmin getRabbitAdmin(CachingConnectionFactory connectionFactory) {
-		RabbitAdmin rabbitAdmin = new RabbitAdmin(connectionFactory);
-		return rabbitAdmin;
+		return new RabbitAdmin(connectionFactory);
 	}
 
 	@Bean
