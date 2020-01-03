@@ -4,7 +4,6 @@ package com.sb.demo.pub.exception;
  * 业务类型异常
  * 
  * @author xg
- * @date 2019-10-23
  */
 public class BusinessException extends RuntimeException {
 
