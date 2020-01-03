@@ -41,7 +41,7 @@ public final class EntityMetaUtil {
 	/**
 	 * 获取实体对应的数据库表名
 	 * 
-	 * @param entity
+	 * @param clazz 实体类
 	 * @return
 	 */
 	public static String getTableName(Class<?> clazz) {
@@ -208,7 +208,7 @@ public final class EntityMetaUtil {
 	 * 根据名称获取Field(递归方式)
 	 * 
 	 * @param clazz
-	 * @param pd
+	 * @param fieldName
 	 * @return
 	 */
 	public static Field getField(Class<?> clazz, String fieldName) {

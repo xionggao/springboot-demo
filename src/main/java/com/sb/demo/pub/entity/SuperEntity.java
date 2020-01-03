@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
  * JPA实体基类
  * 
  * @author xg
- * @date 2019-10-21
  */
 @MappedSuperclass
 public abstract class SuperEntity implements Serializable {

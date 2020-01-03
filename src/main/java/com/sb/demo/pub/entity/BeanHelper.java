@@ -13,7 +13,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * 解析JavaBean(单例)
  * 
  * @author xg
- * @date 2019-10-30
  */
 public class BeanHelper {
 
