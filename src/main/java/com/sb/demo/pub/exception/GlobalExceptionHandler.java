@@ -21,7 +21,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
 	public JsonBackData exceptionHandler(HttpServletRequest request, final Exception e, HttpServletResponse response) {
-		response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+		response.setContentType("application/json;charset=UTF-8");
+		response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 		String uri = request.getRequestURI();
 		String method = request.getMethod();
 		String queryString = request.getQueryString();
