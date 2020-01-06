@@ -27,7 +27,7 @@ import java.util.*;
 public class CommonServiceImpl<R extends BaseJpaRepository<T>, T extends SuperEntity> implements ICommonService<T> {
 
     @Autowired
-    private R repo;
+    protected R repo;
 
     @Override
     public T findById(Serializable id) throws BusinessException {

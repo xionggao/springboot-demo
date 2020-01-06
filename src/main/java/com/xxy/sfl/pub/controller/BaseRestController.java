@@ -27,7 +27,7 @@ import java.util.Map;
 public class BaseRestController<S extends ICommonService<T>, T extends SuperEntity> {
 
     @Autowired
-    private S service;
+    protected S service;
 
     @GetMapping("/findById")
     public JsonBackData findById(@RequestParam String id) {
