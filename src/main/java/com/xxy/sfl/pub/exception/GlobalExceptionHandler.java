@@ -27,7 +27,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		logger.error(String.format("请求地址:%s,请求方式:%s,请求参数:%s", uri, method, queryString), e);
 		JsonBackData back = new JsonBackData();
 		back.setSuccess(false);
-		back.setBackMsg("异常:" + e.getMessage());
+		back.setBackMsg(e.getMessage());
 		return back;
 	}
 }

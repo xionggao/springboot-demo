@@ -316,4 +316,9 @@ public final class Base64Util {
 		}
 		return dest;
 	}
+
+	public static void main(String[] args) {
+		String psw = Base64Util.encodeToString("admin123");
+		System.out.println("psw:"+psw);
+	}
 }

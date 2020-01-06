@@ -6,9 +6,7 @@ import com.xxy.sfl.pub.service.CommonServiceImpl;
 import com.xxy.sfl.pub.utils.Base64Util;
 import com.xxy.sfl.repo.UserRepo;
 import com.xxy.sfl.service.IUserService;
-import org.apache.tomcat.util.ExceptionUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Base64Utils;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,8 +34,8 @@ public class UserServiceImpl extends CommonServiceImpl<UserRepo, UserEntity> imp
         if (userEntity.getStatus() == 0) {
             throw new BusinessException("该用户已被停用!");
         }
-        String password = Base64Util.encodeToString(userEntity.getPassword());
-        if (!pwd.equals(password)) {
+        pwd = Base64Util.encodeToString(pwd);
+        if (!pwd.equals(userEntity.getPassword())) {
             throw new BusinessException("用户密码错误!");
         }
         // 保存当前登录用户到Session
