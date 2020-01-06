@@ -16,6 +16,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.*;
 
 /**
@@ -96,6 +97,7 @@ public class CommonServiceImpl<R extends BaseJpaRepository<T>, T extends SuperEn
         if (t == null) {
             return null;
         }
+        t.setTs(LocalDateTime.now());
         return repo.save(t);
     }
 
